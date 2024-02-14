@@ -7,38 +7,67 @@
     <style>
         h1 {
             text-align: right;
-          	margin-right: 40px;
-          	font-size: 20px;
-          	font-family: "Courier New", monospace;
+            margin-right: 40px;
+            font-size: 20px;
+            font-family: "Courier New", monospace;
+            position: fixed; /* Make the sign.png fixed */
+            top: 0; /* Position it at the top */
+            left: 0; /* Position it at the right */
+            padding-left: 10px; /* Add padding for better appearance */
         }
 
         body {
-            background-image: url("back.jpg");
-          	background-repeat: no-repeat;
-          	background-size: 100% 100%;
             text-align: center;
-          	font-size: 16px;
+            font-size: 16px;
             font-family: "Courier New", monospace;
+            display: flex; /* Add this line */
+            flex-direction: column; /* Add this line */
+            align-items: center; /* Add this line */
+            padding-top: 100px; /* Add padding-top to avoid overlapping with the fixed header */
+           overflow-y: hidden; /* Disable vertical scrolling */
+
+        }
+      .rect-container {
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 25%;
+        height: 100%;
+      }
+
+        .container {
+            display: flex;
+            justify-content: flex-start; /* Adjusted to move the content to the left */
+            align-items: flex-start; /* Adjusted to align content to the top */
+            width: 80%; /* Adjust as needed */
+            margin-top: 20px; /* Adjust margin-top to create space */
         }
 
         ul {
             list-style-type: none;
-            margin-left: 10%;
-            margin-right: 10%;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            width: 20%; /* Adjust as needed */
+            position: fixed; /* Make the list fixed */
+            left: 0; /* Position it at the left */
+            top: 100px; /* Position it below the fixed header */
+            
         }
 
         li {
-            font-size: 25px;
-            margin-left: 10px;
-            margin-right: 10px;
-            position: relative;
-            display: inline-block;
+            font-size: 20px;
+            left: 45px;
+            top: 90px;
+            position: relative; /* Add this line */
         }
 
         a {
             text-decoration: none;
             color: black;
             display: block;
+            margin-bottom: 20px;
         }
 
         .hover-image {
@@ -46,172 +75,167 @@
             position: absolute;
         }
 
-        a:hover .hover-image {
+        li:hover .hover-image { /* Adjusted to target hover effect on li */
             display: inline;
             left: -20px;
             bottom: -5px;
         }
 
         .text-container {
+            width: 40%; /* Adjust as needed */
+            margin-left: 250px; /* Adjust margin-left to create space */
             text-align: left;
-            width: 30%;
-            margin-left: 20%;
-            margin-top: 30px;
-          	margin-bottom: 20px;
-            float: left;
+            
+            
+        }
+
+        .image-container {
+            width: 30%; /* Adjust as needed */
+            margin-left: -100px; /* Adjust margin-left to create space */
         }
 
         .gallery-container {
           	align-content: center;
-            width: 60%; 
-            margin-left: 14%;
-          	margin-right: 20%;
+          margin-left: 185px;
+            top: 10px; 
             float: left;
             display: flex;
         }
 
         .gallery-container img {
-          	align-content: center;
-          	margin-left: -30px;
-          	margin-right: -30px;
-          	margin-top: -10px;
-        	  margin-bottom: 10px;
+    align-content: center;
+    margin-left: -35px;
+    margin-right: -35px;
+    margin-top: -115px; /* Adjust the margin-top as needed to position the images higher */
+    margin-bottom: 10px;
+}
 
 
-        }
     </style>
 </head>
 
 <body>
 
-    <h1><img src="sign.png" alt="Name" width="350"></h1>
+  <div class="rect-container">
+  </div>
+    <h1><img src="sign.png" alt="Name" width="280"></h1>
 
-    <ul>
-        <li>
-            <a href="https://collinyeung.github.io/home/">
-                HOME
-                <img class="hover-image" src="circled.png" alt="hover" width="100">
-            </a>
-        </li>
-        <li>
-            <a href="https://collinyeung.github.io/artwork/">
-                ARTWORK
-                <img class="hover-image" src="circled.png" alt="hover" width="140" height="40">
-            </a>
-        </li>
-        <li>
-            <a href="">
-                PHOTOGRAPHY
-                <img class="hover-image" src="circled.png" alt="hover" width="205" height="40">
-            </a>
-        </li>
-        <li>
-            <a href="https://collinyeung.github.io/film/">
-                FILM
-                <img class="hover-image" src="circled.png" alt="hover" width="100" height="40">
-            </a>
-        </li>
-        <li>
-            <a href="https://collinyeung.github.io/contact/">
-                CONTACT
-                <img class="hover-image" src="circled.png" alt="hover" width="140" height="40">
-            </a>
-        </li>
+    <div class="container">
+        <ul>
+            <li>
+                <a href="https://collinyeung.github.io/home/">
+                    HOME
+                    <img class="hover-image" src="circled.png" alt="hover" width="90">
+                </a>
+            </li>
+            <li>
+                <a href="https://collinyeung.github.io/artwork/">
+                    ARTWORK
+                    <img class="hover-image" src="circled.png" alt="hover" width="130" height="40">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    PHOTOGRAPHY
+                    <img class="hover-image" src="circled.png" alt="hover" width="170" height="40">
+                </a>
+            </li>
+            <li>
+                <a href="https://collinyeung.github.io/film/">
+                    FILM
+                    <img class="hover-image" src="circled.png" alt="hover" width="90" height="40">
+                </a>
+            </li>
+            <li>
+                <a href="https://collinyeung.github.io/contact/">
+                    CONTACT
+                    <img class="hover-image" src="circled.png" alt="hover" width="130" height="40">
+                </a>
+            </li>
     </ul>
-
-    <div class="text-container">
-        <img src="photo.png" alt="photography" width="200">
-    </div>
 
     <div class="gallery-container">
       
       <figure>
-        <img src="piano many.PNG" alt="piano" height="319">
+        <img src="piano many.PNG" alt="piano" height="450">
         <figcaption>
             Piano<br>2023
         </figcaption>
         </figure>
         <figure>
-        <img src="photo1.JPG" alt="sour" height="319">
+        <img src="photo1.JPG" alt="sour" height="450">
         <figcaption>
             Sour<br>2023
         </figcaption>
         </figure>
         <figure>
-        <img src="three.JPG" alt="three" height="319">
+        <img src="three.JPG" alt="three" height="450">
         <figcaption>
             Three<br>2023
         </figcaption>
         </figure>
-    </div>
-    <div class="gallery-container">
        <figure>
-       <img src="film portraits.jpg" alt="flim" height="345">
+       <img src="film portraits.jpg" alt="flim" height="450">
        <figcaption>
             Flim<br>2023
        </figcaption>
        </figure>
        <figure>
-       <img src="tiny.PNG" alt="tiny" height="345"> 
+       <img src="tiny.PNG" alt="tiny" height="450"> 
        <figcaption>
             tiny<br>2023
         </figcaption>
        </figure>
        <figure>
-       <img src="photo10.jpg" alt="silverware" height="345">
+       <img src="photo10.jpg" alt="silverware" height="450">
        <figcaption>
             Silverware<br>2023
         </figcaption>
        </figure>
-    </div>
-    <div class="gallery-container">
        <figure>
-       <img src="photo2.JPG" alt="flood" height="199">
+       <img src="photo2.JPG" alt="flood" height="450">
        <figcaption>
             Candy<br>2023
        </figcaption>
        </figure>
        <figure>
-       <img src="photo9.JPG" alt="bag" height="199"> 
+       <img src="photo9.JPG" alt="bag" height="450"> 
        <figcaption>
             Pack Your Bags<br>2023
         </figcaption>
        </figure>
        <figure>
-       <img src="photo3.JPG" alt="landscape" height="199">
+       <img src="photo3.JPG" alt="landscape" height="450">
        <figcaption>
             Landscape<br>2023
         </figcaption>
        </figure>
-    </div>
-      <div class="gallery-container">
        <figure>
-       <img src="stairs1.jpg" alt="step" height="355">
+       <img src="stairs1.jpg" alt="step" height="450">
        <figcaption>
             Step<br>2023
        </figcaption>
        </figure>
        <figure>
-       <img src="mono1.JPG" alt="mono" height="355"> 
+       <img src="mono1.JPG" alt="mono" height="450"> 
        <figcaption>
             Mono<br>2023
         </figcaption>
        </figure>
        <figure>
-       <img src="polaroid.jpg" alt="polaroids" height="355">
+       <img src="polaroid.jpg" alt="polaroids" height="450">
        <figcaption>
             Polaroids<br>2022
         </figcaption>
        </figure>
-    </div>
-    <div class="gallery-container">
        <figure>
-       <img src="walmart ad.jpg" alt="walmart" height="300">
+       <img src="walmart ad.jpg" alt="walmart" height="450">
        <figcaption>
             Walmart Ad<br>2021
         </figcaption>
        </figure>
     </div>
+  </div>
 </body>
 </html>
 

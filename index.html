@@ -108,9 +108,54 @@
     margin-right: -35px;
     margin-top: -115px; /* Adjust the margin-top as needed to position the images higher */
     margin-bottom: 10px;
+    cursor: pointer; /* Add this line */
 }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white; /* Change background color to white */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto; /* Allow horizontal scrolling */
+            overflow-y: hidden; /* Disable vertical scrolling */
+        }
 
+        .overlay img {
+            height: 440px;
+            margin-left: 10px;
+        }
 
+        .overlay p {
+            color: black;
+            font-size: 18px;
+            margin-top: -300px;
+            margin-left: 40px;
+            text-align: left;
+        }
+      
+        /* Style the first line of text */
+        .overlay p:first-line {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* Style the text under the first line */
+        .overlay p:not(:first-line) {
+            font-weight: normal;
+            font-size: 18px;
+        }
+
+        /* Grid layout for images in overlay */
+        .overlay .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns */
+            gap: 10px; /* Gap between images */
+            margin-left: 20px;
+        }
     </style>
 </head>
 
@@ -151,90 +196,145 @@
                     CONTACT
                     <img class="hover-image" src="circled.png" alt="hover" width="130" height="40">
                 </a>
+        </li>
     </ul>
 
     <div class="gallery-container">
       
       <figure>
-        <img src="piano many.PNG" alt="piano" height="450">
+        <img src="piano many.PNG" alt="piano" height="450" onclick="openOverlay(['piano many.PNG'], 'Piano', 'Canon DSLR Camera', '2023', 'A passion project, experimenting with editing to mimic the look of a professional photoshoot')">
+        
         <figcaption>
             Piano<br>2023
         </figcaption>
         </figure>
         <figure>
-        <img src="photo1.JPG" alt="sour" height="450">
+        <img src="photo1.JPG" alt="sour" height="450" onclick="openOverlay(['photo1.JPG'], 'Sour', 'Canon DSLR Camera', '2023', 'Prompt was to create a neutral portrait. Using makeup, the subject looks wet and dirty to contrast the clean white backdrop')">
         <figcaption>
             Sour<br>2023
         </figcaption>
         </figure>
         <figure>
-        <img src="three.JPG" alt="three" height="450">
+        <img src="three.JPG" alt="three" height="450" onclick="openOverlay(['three.JPG'], 'Three', 'iPhone', '2023', 'A passion project where I had edited three versions of myself in a landscape')">
         <figcaption>
             Three<br>2023
         </figcaption>
         </figure>
        <figure>
-       <img src="film portraits.jpg" alt="flim" height="450">
+       <img src="film portraits.jpg" alt="flim" height="450" onclick="openOverlay(['film portraits.jpg'], 'Film', 'Canon DSLR Camera', '2023', 'Prompt was to convey emotion through pictures. With heavy emphasis on white, I convey a comfortable but longing emotion as I read from a book')">
        <figcaption>
             Flim<br>2023
        </figcaption>
        </figure>
        <figure>
-       <img src="tiny.PNG" alt="tiny" height="450"> 
+       <img src="tiny.PNG" alt="tiny" height="450" onclick="openOverlay(['tiny.PNG'], 'tiny', 'iPhone', '2023', 'A passion project, inspired by retro Steve Madden big head ads and Bratz dolls, I had edited myself to distort the viewer's perspective of me)">
        <figcaption>
             tiny<br>2023
         </figcaption>
        </figure>
        <figure>
-       <img src="photo10.jpg" alt="silverware" height="450">
+       <img src="photo10.jpg" alt="silverware" height="450" onclick="openOverlay(['photo10.jpg'], 'Silverware', 'Canon DSLR Camera', '2023', 'Prompt was to use the long exposure tool so I had experimented with silver jewelry which would create a blurred trail with movement')">
        <figcaption>
             Silverware<br>2023
         </figcaption>
        </figure>
        <figure>
-       <img src="photo2.JPG" alt="flood" height="450">
+       <img src="photo2.JPG" alt="candy" height="450" onclick="openOverlay(['photo2.JPG'], 'Candy', 'Canon DSLR Camera', '2023', 'Prompt was to create a portrait highlighting a piece of clothing with this case being the rings with influences from Harajuku fashion')">
        <figcaption>
             Candy<br>2023
        </figcaption>
        </figure>
        <figure>
-       <img src="photo9.JPG" alt="bag" height="450"> 
+       <img src="photo9.JPG" alt="bag" height="450" onclick="openOverlay(['photo9.JPG'], 'Pack Your Bags', 'Canon DSLR Camera', '2023', 'Prompt was to take portrait of a product so I had shot a plush bag with a bed as a background with legs under it to add comedic value')"> 
        <figcaption>
             Pack Your Bags<br>2023
         </figcaption>
        </figure>
        <figure>
-       <img src="photo3.JPG" alt="landscape" height="450">
+       <img src="photo3.JPG" alt="landscape" height="450" onclick="openOverlay(['photo3.JPG'], 'Landscape', 'Canon DSLR Camera', '2023', 'Prompt was to shoot a landscape so I had created an imaginery landscape reminscent of a torn down city out of shadows of items')">
        <figcaption>
             Landscape<br>2023
         </figcaption>
        </figure>
        <figure>
-       <img src="stairs1.jpg" alt="step" height="450">
+       <img src="stairs1.jpg" alt="step" height="450" onclick="openOverlay(['stairs1.jpg'], 'Step', 'iPhone', '2023', 'Passion project, with heavy emphasis on lines of background and stairs leading to me')">
        <figcaption>
             Step<br>2023
        </figcaption>
        </figure>
        <figure>
-       <img src="mono1.JPG" alt="mono" height="450"> 
+       <img src="mono1.JPG" alt="mono" height="450" onclick="openOverlay(['mono1.JPG'], 'Mono', 'iPhone', '2023', 'Passion project with the intention to create an image that vaguely resembles the form of a person')"> 
        <figcaption>
             Mono<br>2023
         </figcaption>
        </figure>
        <figure>
-       <img src="polaroid.jpg" alt="polaroids" height="450">
+       <img src="polaroid.jpg" alt="polaroids" height="450" onclick="openOverlay(['polaroid.jpg'], 'Polaroids', 'iPhone', '2022', 'Passion project with the intention to show an outfit in a different way, in this case using two polaroids to create form and idea of outfit')">
        <figcaption>
             Polaroids<br>2022
         </figcaption>
        </figure>
        <figure>
-       <img src="walmart ad.jpg" alt="walmart" height="450">
+       <img src="walmart ad.jpg" alt="walmart" height="450" onclick="openOverlay(['walmart ad.jpg'], 'Walmart Ad', 'iPhone', '2021', 'Passion Project creating a comedic contrast between Walmart Ads and retro Chanel ads')">
        <figcaption>
             Walmart Ad<br>2021
         </figcaption>
        </figure>
     </div>
   </div>
+  <div class="overlay" onclick="closeOverlay(event)">
+        <div id="overlayImages"></div>
+        <p id="overlayCaption"></p>
+    </div>
+
+    <script>
+        function openOverlay(imageSrcs, title, medium, year, info) {
+            var overlay = document.querySelector('.overlay');
+            var overlayImages = document.getElementById('overlayImages');
+            var overlayCaption = document.getElementById('overlayCaption');
+
+            // Clear any existing images
+            overlayImages.innerHTML = '';
+
+            // If there are only two images, create a grid layout for them
+            if (imageSrcs.length === 2) {
+                var div = document.createElement('div');
+                div.classList.add('image-grid');
+
+                // Create image elements and append them to the grid div
+                imageSrcs.forEach(function(src) {
+                    var img = document.createElement('img');
+                    img.src = src;
+                    img.alt = title;
+                    div.appendChild(img);
+                });
+
+                overlayImages.appendChild(div);
+            } else {
+                // Create image elements and append them to overlayImages div
+                imageSrcs.forEach(function(src) {
+                    var img = document.createElement('img');
+                    img.src = src;
+                    img.alt = title;
+                    overlayImages.appendChild(img);
+                });
+            }
+
+            overlayCaption.innerHTML = title + "<br>" + medium + "<br>" + year + "<br>" + "<br>" + info;
+
+            overlay.style.display = "flex";
+        }
+
+        function closeOverlay(event) {
+            var overlay = document.querySelector('.overlay');
+            if (event.target == overlay) {
+                overlay.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
 </body>
 </html>
 

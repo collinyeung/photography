@@ -10,38 +10,39 @@
             margin-right: 40px;
             font-size: 20px;
             font-family: "Courier New", monospace;
-            position: fixed; /* Make the sign.png fixed */
-            top: 0; /* Position it at the top */
-            left: 0; /* Position it at the right */
-            padding-left: 10px; /* Add padding for better appearance */
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-left: 10px;
         }
 
         body {
             text-align: center;
             font-size: 16px;
             font-family: "Courier New", monospace;
-            display: flex; /* Add this line */
-            flex-direction: column; /* Add this line */
-            align-items: center; /* Add this line */
-            padding-top: 100px; /* Add padding-top to avoid overlapping with the fixed header */
-           overflow-y: hidden; /* Disable vertical scrolling */
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 100px;
+            overflow-x: hidden;
         }
-      .rect-container {
-        background-color: white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 25%;
-        height: 100%;
-      }
+
+        .rect-container {
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25%;
+            height: 100%;
+        }
 
         .container {
             display: flex;
-            justify-content: flex-start; /* Adjusted to move the content to the left */
-            align-items: flex-start; /* Adjusted to align content to the top */
-            width: 80%; /* Adjust as needed */
-            margin-top: 20px; /* Adjust margin-top to create space */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 20px;
         }
 
         ul {
@@ -49,18 +50,17 @@
             margin: 0;
             padding: 0;
             text-align: left;
-            width: 20%; /* Adjust as needed */
-            position: fixed; /* Make the list fixed */
-            left: 0; /* Position it at the left */
-            top: 100px; /* Position it below the fixed header */
-            
+            width: 20%;
+            position: fixed;
+            left: 0;
+            top: 100px;
         }
 
         li {
             font-size: 20px;
             left: 45px;
             top: 90px;
-            position: relative; /* Add this line */
+            position: relative;
         }
 
         a {
@@ -75,58 +75,46 @@
             position: absolute;
         }
 
-        li:hover .hover-image { /* Adjusted to target hover effect on li */
+        li:hover .hover-image {
             display: inline;
             left: -20px;
             bottom: -5px;
         }
 
-        .text-container {
-            width: 40%; /* Adjust as needed */
-            margin-left: 250px; /* Adjust margin-left to create space */
-            text-align: left;
-            
-            
-        }
-
-        .image-container {
-            width: 30%; /* Adjust as needed */
-            margin-left: -100px; /* Adjust margin-left to create space */
-        }
-
         .gallery-container {
-          	align-content: center;
-          margin-left: 185px;
-            top: 10px; 
-            float: left;
             display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            width: 80%;
+            margin-left: 25%;
+        }
+
+        .gallery-container figure {
+            display: inline-block;
+            margin-right: 20px;
         }
 
         .gallery-container img {
-    align-content: center;
-    margin-left: -35px;
-    margin-right: -35px;
-    margin-top: -115px; /* Adjust the margin-top as needed to position the images higher */
-    margin-bottom: 10px;
-    cursor: pointer; /* Add this line */
-}
+            cursor: pointer;
+        }
+
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: white; /* Change background color to white */
+            background-color: white;
             display: none;
             justify-content: center;
             align-items: center;
-            overflow-x: auto; /* Allow horizontal scrolling */
-            overflow-y: hidden; /* Disable vertical scrolling */
+            overflow-x: auto;
+            overflow-y: hidden;
         }
 
         .overlay img {
             height: 440px;
-            margin-left: 20px;
+            margin-left: 30px;
         }
 
         .overlay p {
@@ -136,51 +124,46 @@
             margin-left: 40px;
             text-align: left;
         }
-      
-        /* Style the first line of text */
+
         .overlay p:first-line {
             font-weight: bold;
             font-size: 24px;
         }
 
-        /* Style the text under the first line */
         .overlay p:not(:first-line) {
             font-weight: normal;
             font-size: 18px;
         }
 
-        /* Grid layout for images in overlay */
         .overlay .image-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Three columns */
-            gap: 10px; /* Gap between images */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
             margin-left: 20px;
         }
     </style>
 </head>
 
 <body>
-
-  <div class="rect-container">
-  </div>
+    <div class="rect-container"></div>
     <h1><img src="sign.png" alt="Name" width="280"></h1>
 
     <div class="container">
         <ul>
             <li>
-                  <a href="https://collinyeung.github.io/home/">
+                <a href="https://collinyeung.github.io/home/">
                     HOME
                     <img class="hover-image" src="circled.png" alt="hover" width="90">
                 </a>
             </li>
             <li>
-                <a href="https://collinyeung.github.io/artwork/">
+                <a href="">
                     ARTWORK
                     <img class="hover-image" src="circled.png" alt="hover" width="130" height="40">
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="https://collinyeung.github.io/photography/">
                     PHOTOGRAPHY
                     <img class="hover-image" src="circled.png" alt="hover" width="170" height="40">
                 </a>
@@ -196,93 +179,69 @@
                     CONTACT
                     <img class="hover-image" src="circled.png" alt="hover" width="130" height="40">
                 </a>
-        </li>
-    </ul>
+            </li>
+        </ul>
+       
+<div class="gallery-container">
+    <figure>
+    <img src="film portraits.jpg" alt="flim" height="550" onclick="openOverlay(['film portraits.jpg'], 'Film', 'Canon DSLR Camera', '2023', 'Prompt was to convey emotion through pictures. With heavy emphasis on white, I convey a comfortable but longing emotion as I read from a book')">
+    <figcaption>
+        Film<br>2023
+    </figcaption>
+</figure>
+<figure>
+    <img src="tiny.PNG" alt="tiny" height="550" onclick="openOverlay(['tiny.PNG'], 'tiny', 'iPhone', '2023', 'A passion project, inspired by retro Steve Madden big head ads and Bratz dolls with a distorted perspective')">
+    <figcaption>
+        Tiny<br>2023
+    </figcaption>
+</figure>
+<figure>
+    <img src="photo10.jpg" alt="silverware" height="550" onclick="openOverlay(['photo10.jpg'], 'Silverware', 'Canon DSLR Camera', '2023', 'Prompt was to use the long exposure tool so I had experimented with silver jewelry which would create a blurred trail with movement')">
+    <figcaption>
+        Silverware<br>2023
+    </figcaption>
+</figure>
+<figure>
+    <img src="photo2.JPG" alt="candy" height="550" onclick="openOverlay(['photo2.JPG'], 'Candy', 'Canon DSLR Camera', '2023', 'Prompt was to create a portrait highlighting a piece of clothing with this case being the rings with influences from Harajuku fashion')">
+    <figcaption>
+        Candy<br>2023
+    </figcaption>
+</figure>
+<figure>
+    <img src="photo9.JPG" alt="bag" height="550" onclick="openOverlay(['photo9.JPG'], 'Pack Your Bags', 'Canon DSLR Camera', '2023', 'Prompt was to take portrait of a product so I had shot a plush bag with a bed as a background with legs under it to add comedic value')">
+    <figcaption>
+        Pack Your Bags<br>2023
+    </figcaption>
+</figure>
+<figure>
+    <img src="photo3.JPG" alt="landscape" height="550" onclick="openOverlay(['photo3.JPG'], 'Landscape', 'Canon DSLR Camera', '2023', 'Prompt was to shoot a landscape so I had created an imaginary landscape reminiscent of a torn down city out of shadows of items')">
+    <figcaption>
+        Landscape<br>2023
+    </figcaption>
+</figure>
+<figure>
+    <img src="mono1.JPG" alt="mono" height="550" onclick="openOverlay(['mono1.JPG'], 'Mono', 'iPhone', '2023', 'Passion project with the intention to create an image that vaguely resembles the form of a person')">
+    <figcaption>
+        Mono<br>2023
+    </figcaption>
+</figure>
+<figure>
+    <img src="polaroid.jpg" alt="polaroids" height="550" onclick="openOverlay(['polaroid.jpg'], 'Polaroids', 'iPhone', '2022', 'Passion project with the intention to show an outfit in a different way, in this case using two polaroids to create form and idea of outfit')">
+    <figcaption>
+        Polaroids<br>2022
+    </figcaption>
+</figure>
+<figure>
+    <img src="walmart ad.jpg" alt="walmart" height="550" onclick="openOverlay(['walmart ad.jpg'], 'Walmart Ad', 'iPhone', '2021', 'Passion Project creating a comedic contrast between Walmart Ads and retro Chanel ads')">
+    <figcaption>
+        Walmart Ad<br>2021
+    </figcaption>
+</figure>
 
-    <div class="gallery-container">
-      
-      <!-- <figure>
-        <img src="piano many.PNG" alt="piano" height="450" onclick="openOverlay(['piano many.PNG'], 'Piano', 'Canon DSLR Camera', '2023', 'A passion project, experimenting with editing to mimic the look of a professional photoshoot')">
-        
-        <figcaption>
-            Piano<br>2023
-        </figcaption>
-        </figure> -->
-        <!-- <figure>
-        <img src="photo1.JPG" alt="sour" height="450" onclick="openOverlay(['photo1.JPG'], 'Sour', 'Canon DSLR Camera', '2023', 'Prompt was to create a neutral portrait. Using makeup, the subject looks wet and dirty to contrast the clean white backdrop')">
-        <figcaption>
-            Sour<br>2023
-        </figcaption>
-        </figure>-->
-        <!-- <figure>
-        <img src="three.JPG" alt="three" height="450" onclick="openOverlay(['three.JPG'], 'Three', 'iPhone', '2023', 'A passion project where I had edited three versions of myself in a landscape')">
-        <figcaption>
-            Three<br>2023
-        </figcaption>
-        </figure> -->
-       <figure>
-       <img src="film portraits.jpg" alt="flim" height="450" onclick="openOverlay(['film portraits.jpg'], 'Film', 'Canon DSLR Camera', '2023', 'Prompt was to convey emotion through pictures. With heavy emphasis on white, I convey a comfortable but longing emotion as I read from a book')">
-       <figcaption>
-            Flim<br>2023
-       </figcaption>
-       </figure>
-       <figure>
-       <img src="tiny.PNG" alt="tiny" height="450" onclick="openOverlay(['tiny.PNG'], 'tiny', 'iPhone', '2023', 'A passion project, inspired by retro Steve Madden big head ads and Bratz dolls with a distorted perspective')">
-       <figcaption>
-            tiny<br>2023
-        </figcaption>
-       </figure>
-       <figure>
-       <img src="photo10.jpg" alt="silverware" height="450" onclick="openOverlay(['photo10.jpg'], 'Silverware', 'Canon DSLR Camera', '2023', 'Prompt was to use the long exposure tool so I had experimented with silver jewelry which would create a blurred trail with movement')">
-       <figcaption>
-            Silverware<br>2023
-        </figcaption>
-       </figure>
-       <figure>
-       <img src="photo2.JPG" alt="candy" height="450" onclick="openOverlay(['photo2.JPG'], 'Candy', 'Canon DSLR Camera', '2023', 'Prompt was to create a portrait highlighting a piece of clothing with this case being the rings with influences from Harajuku fashion')">
-       <figcaption>
-            Candy<br>2023
-       </figcaption>
-       </figure>
-       <figure>
-       <img src="photo9.JPG" alt="bag" height="450" onclick="openOverlay(['photo9.JPG'], 'Pack Your Bags', 'Canon DSLR Camera', '2023', 'Prompt was to take portrait of a product so I had shot a plush bag with a bed as a background with legs under it to add comedic value')"> 
-       <figcaption>
-            Pack Your Bags<br>2023
-        </figcaption>
-       </figure>
-       <figure>
-       <img src="photo3.JPG" alt="landscape" height="450" onclick="openOverlay(['photo3.JPG'], 'Landscape', 'Canon DSLR Camera', '2023', 'Prompt was to shoot a landscape so I had created an imaginery landscape reminscent of a torn down city out of shadows of items')">
-       <figcaption>
-            Landscape<br>2023
-        </figcaption>
-       </figure>
-       <!-- <figure>
-       <img src="stairs1.jpg" alt="step" height="450" onclick="openOverlay(['stairs1.jpg'], 'Step', 'iPhone', '2023', 'Passion project, with heavy emphasis on lines of background and stairs leading to me')">
-       <figcaption>
-            Step<br>2023
-       </figcaption>
-       </figure>-->
-       <figure>
-       <img src="mono1.JPG" alt="mono" height="450" onclick="openOverlay(['mono1.JPG'], 'Mono', 'iPhone', '2023', 'Passion project with the intention to create an image that vaguely resembles the form of a person')"> 
-       <figcaption>
-            Mono<br>2023
-        </figcaption>
-       </figure>
-       <figure>
-       <img src="polaroid.jpg" alt="polaroids" height="450" onclick="openOverlay(['polaroid.jpg'], 'Polaroids', 'iPhone', '2022', 'Passion project with the intention to show an outfit in a different way, in this case using two polaroids to create form and idea of outfit')">
-       <figcaption>
-            Polaroids<br>2022
-        </figcaption>
-       </figure>
-       <figure>
-       <img src="walmart ad.jpg" alt="walmart" height="450" onclick="openOverlay(['walmart ad.jpg'], 'Walmart Ad', 'iPhone', '2021', 'Passion Project creating a comedic contrast between Walmart Ads and retro Chanel ads')">
-       <figcaption>
-            Walmart Ad<br>2021
-        </figcaption>
-       </figure>
+        </div>
     </div>
-  </div>
-  <div class="overlay" onclick="closeOverlay(event)">
+
+    <div class="overlay" onclick="closeOverlay(event)">
         <div id="overlayImages"></div>
         <p id="overlayCaption"></p>
     </div>
@@ -293,16 +252,13 @@
             var overlayImages = document.getElementById('overlayImages');
             var overlayCaption = document.getElementById('overlayCaption');
 
-            // Clear any existing images
             overlayImages.innerHTML = '';
 
-            // If there are only two images, create a grid layout for them
             if (imageSrcs.length === 2) {
                 var div = document.createElement('div');
                 div.classList.add('image-grid');
 
-                // Create image elements and append them to the grid div
-                imageSrcs.forEach(function(src) {
+                imageSrcs.forEach(function (src) {
                     var img = document.createElement('img');
                     img.src = src;
                     img.alt = title;
@@ -311,8 +267,7 @@
 
                 overlayImages.appendChild(div);
             } else {
-                // Create image elements and append them to overlayImages div
-                imageSrcs.forEach(function(src) {
+                imageSrcs.forEach(function (src) {
                     var img = document.createElement('img');
                     img.src = src;
                     img.alt = title;
@@ -321,7 +276,6 @@
             }
 
             overlayCaption.innerHTML = title + "<br>" + medium + "<br>" + year + "<br>" + "<br>" + info;
-
             overlay.style.display = "flex";
         }
 
@@ -334,6 +288,4 @@
     </script>
 </body>
 
-
 </html>
-
